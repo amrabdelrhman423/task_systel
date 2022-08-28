@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/foundation.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:task_systel/data/data_source/local_database.dart';
 
@@ -13,13 +14,17 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   _init() async{
-    print("HHHHHHHHI DB");
+    if (kDebugMode) {
+      print("HI DB");
+    }
    Database database=await LocalDataSource.createDatabase();
    emit(DatabaseCreatedState());
   }
 
   adduser({required username,required amount,required date})async{
-    print('add user');
+    if (kDebugMode) {
+      print('Add User');
+    }
     await LocalDataSource.insetDatabase(username: username, amount: amount, date: date);
     emit(AddUserState());
   }

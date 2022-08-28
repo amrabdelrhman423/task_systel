@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter/foundation.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
 import 'package:task_systel/app/constants.dart';
 import 'package:task_systel/app/failure.dart';
@@ -12,14 +13,20 @@ class ConnectToServer implements UseCase<bool, NoParams> {
           Constants.keyParseApplicationId, Constants.keyParseServerUrl);
       final ParseResponse response = await Parse().healthCheck();
       if (response.success) {
-        print("Sucess");
+        if (kDebugMode) {
+          print("Sucess");
+        }
         return const Right(true);
       } else {
-        print("Faild"+response.error.toString());
+        if (kDebugMode) {
+          print("Faild"+response.error.toString());
+        }
         return Left(Failure(Constants.CredentialError));
       }
     } catch (e) {
-      print("Faild with error");
+      if (kDebugMode) {
+        print("Faild with error");
+      }
 
       return Left(Failure(Constants.InternetError));
     }

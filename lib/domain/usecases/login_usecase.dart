@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter/foundation.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
 import 'package:task_systel/app/failure.dart';
 import 'package:task_systel/app/usecase.dart';
@@ -16,10 +17,14 @@ class LoginUseCase implements UseCase<AuthState, UserLoginModel> {
           ParseUser(params.username, params.password, params.email);
       ParseResponse response = await user.login();
       if (response.success) {
-        print("Sucess");
+        if (kDebugMode) {
+          print("Sucess");
+        }
         return Right(LoginState());
       } else {
-        print("Register");
+        if (kDebugMode) {
+          print("Register");
+        }
         if (params.email.isValidEmail) {
           final userregister = ParseUser.createUser(
               params.username, params.password, params.email);
@@ -30,7 +35,9 @@ class LoginUseCase implements UseCase<AuthState, UserLoginModel> {
         }
       }
     } catch (e) {
-      print("Faild with error");
+      if (kDebugMode) {
+        print("Faild with error");
+      }
 
       return Left(Failure(Constants.InternetError));
     }

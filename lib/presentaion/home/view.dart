@@ -21,11 +21,10 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _buildPage(BuildContext context) {
-    // final bloc = BlocProvider.of<HomeBloc>(context);
 
     return Scaffold(
       body: Stack(
-        children: [
+        children:  [
           const CustomBackground(),
           BodyHomeWidget(),
         ],

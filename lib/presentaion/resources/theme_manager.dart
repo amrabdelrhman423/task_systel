@@ -15,6 +15,7 @@ ThemeData getApplicationTheme() {
       primaryColorDark: ColorManager.darkPrimary,
       disabledColor: ColorManager.BlackColor,
       splashColor: Colors.transparent, //ripple effect Color
+
       backgroundColor: ColorManager.BackgroundScaffoldColor,
       //cardView theme
       cardTheme: CardTheme(

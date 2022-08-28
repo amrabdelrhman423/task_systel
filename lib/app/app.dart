@@ -24,6 +24,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      scrollBehavior:NoGlow(),
       theme: getApplicationTheme(),
       onGenerateRoute: RouteGenerator.getroute,
       initialRoute: Routes.loginScreen,
@@ -31,36 +32,10 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-
-
-// class Test extends StatelessWidget {
-//   const Test({Key? key}) : super(key: key);
-//
-//   void updateAppState(){
-//     MyApp().appState=11;
-//   }
-//
-//   void getAppState(){
-//     print(MyApp().appState);
-//   }
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container();
-//   }
-// }
-//
-// class Test2 extends StatelessWidget {
-//   const Test2({Key? key}) : super(key: key);
-//
-//   void updateAppState(){
-//     MyApp().appState=11;
-//   }
-//
-//   void getAppState(){
-//     print(MyApp().appState);
-//   }
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container();
-//   }
-// }
+class NoGlow extends ScrollBehavior {
+  @override
+  Widget buildViewportChrome(
+      BuildContext context, Widget child, AxisDirection axisDirection) {
+    return child;
+  }
+}

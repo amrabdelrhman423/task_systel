@@ -10,7 +10,7 @@ class CustomBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height:MediaQuery.of(context).size.height*0.6,
-      width: MediaQuery.of(context).size.width,
+      width: double.infinity,
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage(ImageAssets.BackgroundHome),

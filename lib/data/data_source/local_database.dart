@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:sqflite/sqflite.dart';
 
 class LocalDataSource {
@@ -6,18 +7,24 @@ class LocalDataSource {
   static Future createDatabase() async {
     dataBase = await openDatabase('users.db', version: 1,
         onCreate: (database, version) {
-      print("database Created");
+      if (kDebugMode) {
+        print("database Created");
+      }
       database
           .execute(
               'CREATE TABLE users (id INTEGER PRIMARY KEY, username TEXT,amount TEXT ,date TEXT)')
           .then((value) {
       }).catchError((onError) {
-        print(onError.toString());
+        if (kDebugMode) {
+          print(onError.toString());
+        }
       });
 
     }, onOpen: (database) {
       getDatabase(database);
-      print("database opened");
+      if (kDebugMode) {
+        print("database opened");
+      }
     },
     );
     return dataBase;
@@ -41,10 +48,14 @@ class LocalDataSource {
           .rawInsert(
               "INSERT INTO users(username,amount,date) VALUES('$username','$amount','$date')")
           .then((value) {
-        print('${value}  inserted Successfully');
+        if (kDebugMode) {
+          print('$value  inserted Successfully');
+        }
         getDatabase(dataBase);
       }).catchError((onError) {
-        print(onError.toString());
+        if (kDebugMode) {
+          print(onError.toString());
+        }
       });
     });
   }

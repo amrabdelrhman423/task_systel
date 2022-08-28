@@ -1,18 +1,16 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_systel/app/usecase.dart';
 import 'package:task_systel/data/models/user_login_model.dart';
 import 'package:task_systel/domain/usecases/connect_server_usecase.dart';
-// import 'package:task_systel/domain/usecases/register_usecase.dart';
 import 'package:task_systel/presentaion/auth/bloc/state.dart';
 
 import '../../../app/failure.dart';
 import '../../../domain/usecases/login_usecase.dart';
 import 'event.dart';
 
-class AuthBloc extends Bloc<AuthEvent, AuthState> {
+class AuthBloc extends Bloc<AuthEvent, AuthState>{
   AuthBloc() : super(IntialState()) {
     on<InitEvent>((event, emit) => _init(emit));
     on<LoginEvent>((event, emit) => _login(emit));
@@ -22,7 +20,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   TextEditingController passwordController = TextEditingController();
   final ConnectToServer connectToServer = ConnectToServer();
   final LoginUseCase loginUseCase = LoginUseCase();
-  // final RegisterUserCase registerUserCase = RegisterUserCase();
 
   _init(Emitter<AuthState> emit) async {
     Either<Failure, bool> response = await connectToServer(NoParams());
