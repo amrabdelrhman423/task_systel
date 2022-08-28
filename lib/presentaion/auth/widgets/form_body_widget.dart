@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_systel/app/constants.dart';
@@ -46,6 +45,7 @@ class BodyFormWidget extends StatelessWidget {
                       if (!val!.isValidEmail && !val.isValidName) {
                         return "value is incorrect";
                       }
+                      return null;
                     },
                   ),
                   const SizedBox(
@@ -63,6 +63,7 @@ class BodyFormWidget extends StatelessWidget {
                       if (!val.isValidatePassword) {
                         return "password is not valid";
                       }
+                      return null;
                     },
                   ),
                 ],

@@ -26,7 +26,7 @@ class ErrorLoginWidget extends StatelessWidget {
           children: [
             SvgPicture.asset(ImageAssets.ErrorIconLoginSVG),
              Text(
-              '$message',
+              message,
               style:const TextStyle(
                 fontSize: AppSize.s15,
                 color:ColorManager.white,

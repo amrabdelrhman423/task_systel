@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:task_systel/presentaion/resources/assets_managet.dart';
-import 'package:task_systel/presentaion/resources/color_manager.dart';
-import 'dart:ui' as ui;
 
 class CustomBackground extends StatelessWidget {
   const CustomBackground({Key? key}) : super(key: key);

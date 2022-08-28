@@ -9,7 +9,7 @@ import '../../resources/values_manager.dart';
 class CardUserDetailsWidget extends StatelessWidget {
   final String username,amount,date;
 
-   CardUserDetailsWidget({Key? key,required this.username,required this.amount,required this.date}) : super(key: key);
+   const CardUserDetailsWidget({Key? key,required this.username,required this.amount,required this.date}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class CardUserDetailsWidget extends StatelessWidget {
             height: 80,
             decoration: BoxDecoration(
               color: ColorManager.ColorUser[rng.nextInt(3)],
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(13.0),
                 topRight: Radius.circular(13.0),
               ),
@@ -46,8 +46,8 @@ class CardUserDetailsWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  '${username}',
-                  style: TextStyle(
+                  username,
+                  style: const TextStyle(
                     fontFamily: 'SF Compact Display',
                     fontSize: 16,
                     color: Color(0xffffffff),
@@ -59,7 +59,7 @@ class CardUserDetailsWidget extends StatelessWidget {
                 const SizedBox(
                   height: AppSize.s4,
                 ),
-                Text(
+                const Text(
                   'Total Spending',
                   style: TextStyle(
                     fontFamily: 'SF Compact Display',
@@ -68,7 +68,7 @@ class CardUserDetailsWidget extends StatelessWidget {
                   ),
                   softWrap: false,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: AppSize.s4,
                 )
               ],
@@ -86,7 +86,7 @@ class CardUserDetailsWidget extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children:  [
-                        RotatedBox(
+                        const RotatedBox(
                           quarterTurns: -1,
                           child: Text(
                             'EGP',
@@ -98,10 +98,10 @@ class CardUserDetailsWidget extends StatelessWidget {
                             softWrap: false,
                           ),
                         ),
-                        SizedBox(width: AppSize.s4,),
+                        const SizedBox(width: AppSize.s4,),
                         Text(
-                          '$amount',
-                          style: TextStyle(
+                          amount,
+                          style: const TextStyle(
                             fontSize: 30,
                             color: ColorManager.BlackColor,
                             letterSpacing: -1.05,
@@ -113,19 +113,19 @@ class CardUserDetailsWidget extends StatelessWidget {
                       ],
                     ),
                      Text(
-                      '  Last spend ${date}',
-                      style: TextStyle(
+                      '  Last spend $date',
+                      style: const TextStyle(
                         fontSize: AppSize.s11,
                         color: Color(0xff747474),
                       ),
                     ),
-                    SizedBox(height: AppSize.s15,)
+                    const SizedBox(height: AppSize.s15,)
                   ],
                 ),
               ),
             ),
           ),
-          Positioned(
+          const Positioned(
             top: -25,
             right: 30,
             left: 30,

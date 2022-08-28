@@ -33,9 +33,9 @@ class LocalDataSource {
   static getDatabase(Database database) {
     usersName=[];
     database.rawQuery('SELECT * FROM users').then((value) {
-      value.forEach((element) {
+      for (var element in value) {
         usersName.add(element);
-      });
+      }
     });
   }
 

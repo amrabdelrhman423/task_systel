@@ -1,5 +1,4 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:task_systel/presentaion/resources/styles_manager.dart';
 import 'package:task_systel/presentaion/resources/values_manager.dart';
@@ -18,7 +17,7 @@ ThemeData getApplicationTheme() {
 
       backgroundColor: ColorManager.BackgroundScaffoldColor,
       //cardView theme
-      cardTheme: CardTheme(
+      cardTheme: const CardTheme(
         color: ColorManager.white,
         shadowColor: ColorManager.BlackColor,
         elevation: AppSize.s4,
@@ -67,27 +66,27 @@ ThemeData getApplicationTheme() {
       labelStyle: getMediumStyle(color: ColorManager.BlackColor,fontSize: FontSize.s14),
       errorStyle:  getRegularStyle(color: ColorManager.error),
       //Enable Border
-      enabledBorder: OutlineInputBorder(
+      enabledBorder: const OutlineInputBorder(
         borderSide: BorderSide(color: ColorManager.white,width: AppSize.s1_5),
         borderRadius: BorderRadius.all(Radius.circular(AppSize.s8))
       ),
 
           //Focused Border
-          focusedBorder: OutlineInputBorder(
+          focusedBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: ColorManager.white,width: AppSize.s1_5),
               borderRadius: BorderRadius.all(Radius.circular(AppSize.s8))
           ),
       //error Border
-      errorBorder: OutlineInputBorder(
+      errorBorder: const OutlineInputBorder(
           borderSide: BorderSide(color: ColorManager.error,width: AppSize.s1_5),
           borderRadius: BorderRadius.all(Radius.circular(AppSize.s8))
       ),
 
       //focused error border
-      focusedErrorBorder: OutlineInputBorder(
+      focusedErrorBorder: const OutlineInputBorder(
           borderSide: BorderSide(color: ColorManager.Primary,width: AppSize.s1_5),
           borderRadius: BorderRadius.all(Radius.circular(AppSize.s8))
       ),
-  ), textSelectionTheme: TextSelectionThemeData(cursorColor: ColorManager.Primary)
+  ), textSelectionTheme: const TextSelectionThemeData(cursorColor: ColorManager.Primary)
       );
 }

@@ -7,11 +7,9 @@ import '../presentaion/resources/theme_manager.dart';
 class MyApp extends StatefulWidget {
 
   //named constructor
-  MyApp._initernal();
+  const MyApp._initernal();
 
-  int appState=0;
-
-  static final MyApp _inastance=MyApp._initernal(); // singleton or Single instance
+  static const MyApp _inastance=MyApp._initernal(); // singleton or Single instance
 
   factory MyApp()=>_inastance;
 

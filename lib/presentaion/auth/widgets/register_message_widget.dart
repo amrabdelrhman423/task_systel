@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:task_systel/presentaion/resources/assets_managet.dart';
 
 import '../../resources/color_manager.dart';
 import '../../resources/values_manager.dart';
@@ -27,7 +25,7 @@ class RegisterMessageWidget extends StatelessWidget {
             color: ColorManager.white,
           ),
           Text(
-            '$message',
+            message,
             style: const TextStyle(
               fontSize: AppSize.s15,
               color: ColorManager.white,

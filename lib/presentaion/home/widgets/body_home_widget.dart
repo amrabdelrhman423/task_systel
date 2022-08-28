@@ -1,20 +1,17 @@
 import 'dart:math';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_systel/app/constants.dart';
 import 'package:task_systel/data/data_source/local_database.dart';
 import 'package:task_systel/presentaion/home/bloc/bloc.dart';
 import 'package:task_systel/presentaion/home/widgets/welcom_username_widget.dart';
-import 'package:task_systel/presentaion/resources/assets_managet.dart';
 import 'package:task_systel/presentaion/resources/color_manager.dart';
 
 import '../../resources/values_manager.dart';
 import 'appbar_home_widget.dart';
 import 'button_test_widget.dart';
 import 'card_user_details_widget.dart';
-import 'card_wallet_details_widget.dart';
 import 'cards_wallet_payment_widget.dart';
 
 class BodyHomeWidget extends StatelessWidget {

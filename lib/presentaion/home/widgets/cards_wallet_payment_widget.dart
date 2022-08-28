@@ -11,7 +11,7 @@ class CardsWalletPaymentWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
+      children: const [
         CardWalletDetailsWidget(
           date: "Last update 24/6",
           amount: "920.0",

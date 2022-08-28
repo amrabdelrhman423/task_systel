@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_systel/app/constants.dart';
-import 'package:task_systel/presentaion/auth/widgets/error_widget.dart';
-import 'package:task_systel/presentaion/auth/widgets/register_message_widget.dart';
 import 'package:task_systel/presentaion/resources/color_manager.dart';
-import 'package:task_systel/presentaion/resources/routes_manager.dart';
 
 import '../resources/values_manager.dart';
 import 'bloc/bloc.dart';

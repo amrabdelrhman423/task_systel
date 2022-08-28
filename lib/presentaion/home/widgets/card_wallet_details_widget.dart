@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:task_systel/presentaion/resources/assets_managet.dart';
 
 import '../../resources/color_manager.dart';
 import '../../resources/values_manager.dart';
@@ -8,7 +7,7 @@ import '../../resources/values_manager.dart';
 class CardWalletDetailsWidget extends StatelessWidget {
   final String title,imagePath,amount,date;
   final Color colorHeader;
-   CardWalletDetailsWidget({Key? key, required this.title, required this.imagePath,required this.amount,required this.date,required this.colorHeader}) : super(key: key);
+   const CardWalletDetailsWidget({Key? key, required this.title, required this.imagePath,required this.amount,required this.date,required this.colorHeader}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +33,7 @@ class CardWalletDetailsWidget extends StatelessWidget {
             height:MediaQuery.of(context).size.height*0.05 ,
             decoration:  BoxDecoration(
               color:colorHeader,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(13.0),
                 topRight: Radius.circular(13.0),
               ),
@@ -71,9 +70,9 @@ class CardWalletDetailsWidget extends StatelessWidget {
                   softWrap: false,
                 ),
               ),
-              SizedBox(width: AppSize.s8,),
+              const SizedBox(width: AppSize.s8,),
               Text(
-                '$amount',
+                amount,
                 style: const TextStyle(
                   fontFamily: 'SF Compact Display',
                   fontSize: 42,
@@ -87,7 +86,7 @@ class CardWalletDetailsWidget extends StatelessWidget {
             ],
           ),
            Text(
-            '    ${date}',
+            '    $date',
             style: const TextStyle(
               fontSize: AppSize.s11,
               color: Color(0xff747474),
