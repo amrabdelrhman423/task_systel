@@ -12,8 +12,8 @@ class CardWalletDetailsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width*0.43,
-      height: MediaQuery.of(context).size.height*0.21,
+      width:MediaQuery.of(context).size.width*0.41,
+      height: 200,
       decoration: BoxDecoration(
         color: ColorManager.white,
         borderRadius: BorderRadius.circular(AppSize.s15),

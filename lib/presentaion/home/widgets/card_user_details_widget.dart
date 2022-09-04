@@ -16,7 +16,7 @@ class CardUserDetailsWidget extends StatelessWidget {
     final rng = Random();
 
     return  Container(
-      width: MediaQuery.of(context).size.width * 0.35,
+      width: 150,
       height: 160,
       decoration: BoxDecoration(
         color: ColorManager.white,
